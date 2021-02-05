@@ -1,34 +1,56 @@
 <!DOCTYPE html>
 <html>
+    
 <head>
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700" rel="stylesheet">
+    <link rel="stylesheet" href="css/bulma.min.css" />
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
+
 <body>
-    <div class="container">
-    <div style="height:50px;"></div>
-    <div class="well" style="margin:auto; padding:auto; width:80%;">
-    <span style="font-size:25px; color:blue"><center><strong>Login</strong></center></span>
-    <form method="POST" action="valida.php">
-        <fieldset id="fie">
-           <label>Nome:</label>
-           <input type="text" name="login"> <br><br>
-           <label>Senha:</label>
-           <input type="password" name="senha"> <br><br>
-           <input type="submit" value="LOGAR">
-        </fieldset>
-    </form>
-    </div>
-    <?php
-        session_start();
-        if (!isset($_SESSION['msg']) == true) {
-            # code...
-            echo "";
-        }else {
-            # code...
-            echo "<p><b><i>" . $_SESSION['msg'] . "</p></b></i>";
-        }
-    ?>
+    <section class="hero is-success is-fullheight">
+        <div class="hero-body">
+            <div class="container has-text-centered">
+                <div class="column is-4 is-offset-4">
+                    <h3 class="title has-text-grey">Login</h3>
+                    <!--<h3 class="title has-text-grey"><a href="https://github.com/diegotpereira"> <img src='img/logotipo-do-github.png' target="_blank"></a></h3>-->
+                 
+                    <div class="box">
+                        <form action="valida.php" method="POST">
+                            <div class="field">
+                                <div class="control">
+                                    <input name="login" name="text" class="input is-large" placeholder="Digite seu Usuário" autofocus="">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <div class="control">
+                                    <input name="senha" class="input is-large" type="password" placeholder="Digite sua Senha">
+                                </div>
+                            </div>
+                            <button type="submit" value="LOGAR" class="button is-block is-link is-large is-fullwidth">Entrar</button>
+                        </form>
+                    
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+        <?php
+                            session_start();
+
+                            if (!isset($_SESSION['msg']) == true) {
+                                # code...
+                                echo "";
+                            }else {
+                                # code...
+                                echo "<p><b><i>" . $_SESSION['msg'] . "</p></b></i>";
+                            }
+                        ?>
 </body>
+
 </html>
