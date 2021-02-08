@@ -11,11 +11,11 @@
 </head>
 <body>
    <ul>
-       <li><a href="index.php">Home</a></li>
+       <li><a href="cabecalho.php">Home</a></li>
        <li><a href="criarform.php">Adicionar</a></li>
        <li><a href="lerfrm.php">Ver</a></li>
        <li><a href="atualizarfrm.php">Atualizar</a></li>
-       <li><a href="deletarfrm">Deletar</a></li>
+       <li><a href="deletarfrm.php">Deletar</a></li>
    </ul>
 </body>
 </html>

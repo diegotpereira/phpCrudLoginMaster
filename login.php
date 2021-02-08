@@ -41,16 +41,16 @@
         </div>
     </section>
         <?php
-                            session_start();
+            session_start();
 
-                            if (!isset($_SESSION['msg']) == true) {
-                                # code...
-                                echo "";
-                            }else {
-                                # code...
-                                echo "<p><b><i>" . $_SESSION['msg'] . "</p></b></i>";
-                            }
-                        ?>
+            if (!isset($_SESSION['msg']) == true) {
+                # code...
+                echo "";
+            }else {
+                # code...
+                echo "<p><b><i>" . $_SESSION['msg'] . "</p></b></i>";
+            }
+        ?>
 </body>
 
 </html>

@@ -13,5 +13,6 @@
     }else {
         # code...
         #echo ('Conexão ao banco de dados realizada com sucesso');
+        mysqli_select_db($conexao, 'db_php_crud_master_login');  
     }
 ?>

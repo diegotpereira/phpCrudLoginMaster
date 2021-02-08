@@ -2,11 +2,15 @@
 <?php include "conexao.php"; ?>
 
 <?php
-   $nome = $_POST['nome'];
-   $ender = $_POST['ender'];
-   $id = $_POST['rg'];
+if (!empty($_POST)) {
+    
+    $id = isset($_POST['id']) ? $_POST['id'] : NULL;
+    $nome = isset($_POST['nome']) ? $_POST['nome'] : '';
+    $ender = isset($_POST['ender']) ? $_POST['ender'] : '';
 
-   $query = "UPDATE PESSOA SET NOME = '$nome', ender = '$ender' WHERE rg = '$id'";
+
+
+   $query = "UPDATE PESSOA SET nome = '$nome', ender = '$ender' WHERE rg = '$id'";
    $ok = mysqli_query($conexao, $query);
    if ($ok && mysqli_affected_rows($conexao) == 0) {
        # code...
@@ -19,4 +23,6 @@
        echo "Não foi possível atualizar!!!";
    }
    mysqli_close($conexao);
+
+}   
 ?>
